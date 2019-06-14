@@ -1,0 +1,212 @@
+{
+	"nodes": [
+		"compilation unit",
+		"member select",
+		"member select",
+		"member select",
+		"member select",
+		"identifier",
+		"import",
+		"member select",
+		"member select",
+		"member select",
+		"member select",
+		"identifier",
+		"class",
+		"modifiers",
+		"identifier",
+		"method",
+		"modifiers",
+		"block",
+		"expression statement",
+		"method invocation",
+		"identifier",
+		"method",
+		"modifiers",
+		"annotation",
+		"identifier",
+		"primitive type",
+		"variable",
+		"identifier",
+		"block",
+		"enhanced for loop",
+		"variable",
+		"identifier",
+		"method invocation",
+		"member select",
+		"identifier",
+		"literal",
+		"block",
+		"if",
+		"paranthesized",
+		"unary",
+		"method invocation",
+		"member select",
+		"identifier",
+		"method invocation",
+		"member select",
+		"method invocation",
+		"member select",
+		"paranthesized",
+		"new class",
+		"identifier",
+		"identifier",
+		"block",
+		"return",
+		"literal",
+		"return",
+		"literal"
+	],
+	"adj": [
+		[
+			1,
+			6,
+			12
+		],
+		[
+			2
+		],
+		[
+			3
+		],
+		[
+			4
+		],
+		[
+			5
+		],
+		[],
+		[
+			7
+		],
+		[
+			8
+		],
+		[
+			9
+		],
+		[
+			10
+		],
+		[
+			11
+		],
+		[],
+		[
+			13,
+			14,
+			15,
+			21
+		],
+		[],
+		[],
+		[
+			16,
+			17
+		],
+		[],
+		[
+			18
+		],
+		[
+			19
+		],
+		[
+			20
+		],
+		[],
+		[
+			22,
+			25,
+			26,
+			28
+		],
+		[
+			23
+		],
+		[
+			24
+		],
+		[],
+		[],
+		[
+			27
+		],
+		[],
+		[
+			29,
+			54
+		],
+		[
+			30,
+			32,
+			36
+		],
+		[
+			31
+		],
+		[],
+		[
+			33,
+			35
+		],
+		[
+			34
+		],
+		[],
+		[],
+		[
+			37
+		],
+		[
+			38,
+			51
+		],
+		[
+			39
+		],
+		[
+			40
+		],
+		[
+			41,
+			43
+		],
+		[
+			42
+		],
+		[],
+		[
+			44
+		],
+		[
+			45
+		],
+		[
+			46
+		],
+		[
+			47
+		],
+		[
+			48
+		],
+		[
+			49,
+			50
+		],
+		[],
+		[],
+		[
+			52
+		],
+		[
+			53
+		],
+		[],
+		[
+			55
+		],
+		[]
+	]
+}

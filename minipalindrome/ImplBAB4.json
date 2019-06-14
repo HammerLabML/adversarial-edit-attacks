@@ -1,0 +1,307 @@
+{
+	"nodes": [
+		"compilation unit",
+		"member select",
+		"member select",
+		"member select",
+		"member select",
+		"identifier",
+		"import",
+		"member select",
+		"member select",
+		"member select",
+		"member select",
+		"identifier",
+		"import",
+		"member select",
+		"member select",
+		"member select",
+		"identifier",
+		"import",
+		"member select",
+		"member select",
+		"member select",
+		"identifier",
+		"class",
+		"modifiers",
+		"identifier",
+		"method",
+		"modifiers",
+		"block",
+		"expression statement",
+		"method invocation",
+		"identifier",
+		"variable",
+		"modifiers",
+		"identifier",
+		"method invocation",
+		"member select",
+		"identifier",
+		"literal",
+		"method",
+		"modifiers",
+		"annotation",
+		"identifier",
+		"primitive type",
+		"variable",
+		"identifier",
+		"block",
+		"variable",
+		"identifier",
+		"method invocation",
+		"member select",
+		"identifier",
+		"identifier",
+		"while loop",
+		"paranthesized",
+		"method invocation",
+		"member select",
+		"identifier",
+		"block",
+		"variable",
+		"identifier",
+		"method invocation",
+		"member select",
+		"identifier",
+		"if",
+		"paranthesized",
+		"unary",
+		"method invocation",
+		"member select",
+		"method invocation",
+		"member select",
+		"method invocation",
+		"member select",
+		"paranthesized",
+		"new class",
+		"identifier",
+		"identifier",
+		"identifier",
+		"block",
+		"return",
+		"literal",
+		"return",
+		"literal"
+	],
+	"adj": [
+		[
+			1,
+			6,
+			12,
+			17,
+			22
+		],
+		[
+			2
+		],
+		[
+			3
+		],
+		[
+			4
+		],
+		[
+			5
+		],
+		[],
+		[
+			7
+		],
+		[
+			8
+		],
+		[
+			9
+		],
+		[
+			10
+		],
+		[
+			11
+		],
+		[],
+		[
+			13
+		],
+		[
+			14
+		],
+		[
+			15
+		],
+		[
+			16
+		],
+		[],
+		[
+			18
+		],
+		[
+			19
+		],
+		[
+			20
+		],
+		[
+			21
+		],
+		[],
+		[
+			23,
+			24,
+			25,
+			31,
+			38
+		],
+		[],
+		[],
+		[
+			26,
+			27
+		],
+		[],
+		[
+			28
+		],
+		[
+			29
+		],
+		[
+			30
+		],
+		[],
+		[
+			32,
+			33,
+			34
+		],
+		[],
+		[],
+		[
+			35,
+			37
+		],
+		[
+			36
+		],
+		[],
+		[],
+		[
+			39,
+			42,
+			43,
+			45
+		],
+		[
+			40
+		],
+		[
+			41
+		],
+		[],
+		[],
+		[
+			44
+		],
+		[],
+		[
+			46,
+			52,
+			80
+		],
+		[
+			47,
+			48
+		],
+		[],
+		[
+			49,
+			51
+		],
+		[
+			50
+		],
+		[],
+		[],
+		[
+			53,
+			57
+		],
+		[
+			54
+		],
+		[
+			55
+		],
+		[
+			56
+		],
+		[],
+		[
+			58,
+			63
+		],
+		[
+			59,
+			60
+		],
+		[],
+		[
+			61
+		],
+		[
+			62
+		],
+		[],
+		[
+			64,
+			77
+		],
+		[
+			65
+		],
+		[
+			66
+		],
+		[
+			67,
+			76
+		],
+		[
+			68
+		],
+		[
+			69
+		],
+		[
+			70
+		],
+		[
+			71
+		],
+		[
+			72
+		],
+		[
+			73
+		],
+		[
+			74,
+			75
+		],
+		[],
+		[],
+		[],
+		[
+			78
+		],
+		[
+			79
+		],
+		[],
+		[
+			81
+		],
+		[]
+	]
+}

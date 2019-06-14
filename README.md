@@ -41,6 +41,16 @@ via backtracing ([Paaßen, 2018][1]).
 These methods are implemented in `adversarial_edits.construct_random_adversarial`
 and `adversarial_edits.construct_adversarial`, respectively.
 
+## Installation and setup
+
+To set up this package, you need to
+
+1. install all dependencies listed below (except for `ptk`, which is enclosed),
+2. run the command `python3 setup.py build_ext --inplace` to compile the cython
+    sources.
+
+Then, every function should run.
+
 ## Reproduce the results in the paper
 
 To reproduce the results presented in the paper, you merely have to run the
@@ -70,9 +80,10 @@ D = multiprocess.pairwise_distances_symmetric(X, X)
 
 As dependencies, this package requires [numpy](http://www.numpy.org/) for
 general array handling, [scipy](https://scipy.org/) for eigenvalue decomposition
-and statistical tests, [pytorch](https://pytorch.org/) for recursive neural
+and statistical tests, [sklearn](https://scikit-learn.org/stable/) for
+support vector machines, [pytorch](https://pytorch.org/) for recursive neural
 networks, [cython](https://cython.org/) for fast tree edit distance
-computations, and [ptk](http://www.joedsm.altervista.org/pythontreekernels.htm)
+computations, and [ptk][2]
 for tree kernel computations. Note that the latter package is not available via
 pip and is written in Python2, such that we include an adapted Python3 version
 here in the subfolder `ptk`.
@@ -84,8 +95,54 @@ contained alongside this documentation is licensed under the
 [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
 A copy of this license is contained in the `gpl-3.0.md` file alongside this README.
 
+## Contents
+
+The detailed contents of this package are the following:
+
+* `adversarial_edits.py` : Implements adversarial edit attacks.
+* `adversarial_edits_test.py` : Provides test functions for `adversarial_edits.py`.
+* `cystic` : Contains the Cystic data set in JSON format.
+* `Cystic.ipynb` : Contains the Cystic experiment.
+* `gpl-3.0.md` : Contains the GPLv3 license.
+* `hyperopt.py` : Implements hyper parameter optimization for SVM and tree echo
+    state networks.
+* `hyperopt_test.py` : Provides test functions for `hyperopt.py`.
+* `leukemia` : Contains the Leukemia data set in JSON format.
+* `Leukemia.ipynb` : Contains the Leukemia experiment.
+* `minipalindrome` : Contains the MiniPalindrome data set in JSON format.
+* `MiniPalindrome.ipynb` : Contains the MiniPalindrome experiment.
+* `ptk` : Contains a python3 compatible version of Giovanni Da San Martino's
+          [python tree kernel (ptk) toolbox][2].
+* `ptk_utils.py` : Contains interface functions for the ptk toolbox.
+* `README.md` : This file.
+* `recursive_net.py` : Implements recursive neural networks
+    ([Sperduti & Starita, 1997][3]) in [pytorch](https://pytorch.org/).
+* `recursive_net_test.py` : Provides test functions for `recursive_net.py`.
+* `results` : Contains experimental results.
+* `Resulty.ipynb` : Evaluates the experimental results.
+* `setup.py` : A helper script to compile the `ted.pyx` file using
+    [cython](https://cython.org/).
+* `sorting` : Contains the Sorting data set in JSON format.
+* `Sorting.ipynb` : Contains the Sorting experiment.
+* `ted.pyx` : Implements the tree edit distance and its backtracing following
+    [Paaßen (2018)][1].
+* `ted_test.py` : Provides test functions for `ted.pyx`.
+* `trace.py` : Contains utility classes for tree edit distance backtracing.
+* `tree_echo_state.py` : Implements Tree Echo State nwtorks
+    ([Gallicchio & Micheli, 2013][4]).
+* `tree_echo_state_test.py` : Provides test functions for `tree_echo_state.py`.
+* `tree_edits.py` : Implements tree edits as described in the paper.
+* `tree_edits_test.py` : Provides test functions for `tree_edits.py`.
+* `tree_utils.py` : Provides utility functions for tree processing.
+* `tree_utils_test.py` : Provides test functions for `tree_utils.py`.
+
 ## Literature
 
 * Paaßen, B. (2018). Revisiting the tree edit distance and its backtracing: A tutorial. [arXiv:1805.06869][1]
+* Sperduti, A. & Starita, A. (1997). Supervised neural networks for the classification of structures. IEEE Transactions on Neural Networks, 8(3), 714-735. doi:[10.1109/72.572108][3]
+* Gallicchio, C. & Micheli, A. (2013). Tree Echo State Networks. Neurocomputing, 101, 319-337. doi:[10.1016/j.neucom.2012.08.017][4]
 
-[1]: https://arxiv.org/abs/1805.06869 "Paaßen, B. (2018). Revisiting the tree edit distance and its backtracing: A tutorial. arXiv:1805.06869"
+[1]: https://arxiv.org/abs/1805.06869 "Paaßen, B. (2018). Revisiting the tree edit distance and its backtracing: A tutorial. arXiv:1805.06869."
+[2]: http://www.joedsm.altervista.org/pythontreekernels.htm "Python tree kernels, as provided by Giovanni da san Martino."
+[3]: http://doi.org/10.1109/72.572108 "Sperduti, A. & Starita, A. (1997). Supervised neural networks for the classification of structures. IEEE Transactions on Neural Networks, 8(3), 714-735."
+[4]: http://doi.org/10.1016/j.neucom.2012.08.017 "Gallicchio, C. & Micheli, A. (2013). Tree Echo State Networks. Neurocomputing, 101, 319-337."
