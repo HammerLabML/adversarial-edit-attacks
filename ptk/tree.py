@@ -1,6 +1,11 @@
-'''
+"""
 A set of Classes to handle trees and compute kernel functions on them
-'''
+as provided by Giovanni Da San Martino at
+http://www.joedsm.altervista.org/pythontreekernels.htm .
+This version has been adjusted to Python 3 by Benjamin Paaßen.
+
+Copyright lies with Giovanni Da San Martino.
+"""
 from functools import cmp_to_key
 
 import random

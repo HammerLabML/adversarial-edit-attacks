@@ -1,3 +1,11 @@
+"""
+Python Tree Kernels as provided by Giovanni Da San Martino at
+http://www.joedsm.altervista.org/pythontreekernels.htm .
+This version has been adjusted to Python 3 by Benjamin Paaßen.
+
+Copyright lies with Giovanni Da San Martino.
+"""
+
 import math
 from copy import deepcopy
 import ptk.tree as tree
