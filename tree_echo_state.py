@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import multiprocessing as mp
 import numpy as np
-from tree_utils import root
+from edist.tree_utils import root
 
 __author__ = 'Benjamin Paaßen'
 __copyright__ = 'Copyright 2019, Benjamin Paaßen'

@@ -26,10 +26,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import copy
 import random
 import numpy as np
-import ted
-import multiprocess as mp
-import tree_edits
-import tree_utils
+import edist.multiprocess as mp
+import edist.ted as ted
+import edist.tree_edits as tree_edits
+import edist.tree_utils as tree_utils
 
 __author__ = 'Benjamin Paaßen'
 __copyright__ = 'Copyright 2019, Benjamin Paaßen'
@@ -123,7 +123,7 @@ def construct_adversarials(X, D, Y, Y_pred, classifier):
             X_same_class = []
             for j in np.where(Y == labels[i])[0]:
                 X_same_class.append(X[j])
-            ds_same_class = mp.pairwise_distances([(z_nodes, z_adj)], X_same_class)[0]
+            ds_same_class = mp.pairwise_distances([(z_nodes, z_adj)], X_same_class, ted.standard_ted)[0]
             d_zy = np.min(ds_same_class)
         # store the relative distance
         if(d_zy > 0):
@@ -159,8 +159,8 @@ def construct_adversarial(x_nodes, x_adj, x_label, y_nodes, y_adj, classifier):
     label:   The new label for the adversarial example.
     """
     # construct the shortest edit script from x to y.
-    trace   = ted.standard_ted_backtrace(x_nodes, x_adj, y_nodes, y_adj)
-    script  = tree_edits.trace_to_script(trace, x_nodes, x_adj, y_nodes, y_adj)
+    alignment = ted.standard_ted_backtrace(x_nodes, x_adj, y_nodes, y_adj)
+    script    = tree_edits.alignment_to_script(alignment, x_nodes, x_adj, y_nodes, y_adj)
     # perform a binary search to identify the shortest edit script which still
     # flips the label
     return _binary_search(x_nodes, x_adj, x_label, script, classifier)
@@ -279,7 +279,7 @@ def construct_random_adversarials(X, Y, Y_pred, classifier, alphabet = None, max
         X_same_class = []
         for j in np.where(Y == labels[i])[0]:
             X_same_class.append(X[j])
-        d_zy = np.min(mp.pairwise_distances([(z_nodes, z_adj)], X_same_class)[0])
+        d_zy = np.min(mp.pairwise_distances([(z_nodes, z_adj)], X_same_class, ted.standard_ted)[0])
         if(d_zy > 0):
             ds[i] = float(len(script)) / float(d_zy)
 

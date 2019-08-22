@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import numpy as np
 import torch
-from tree_utils import root
+from edist.tree_utils import root
 
 __author__ = 'Benjamin Paaßen'
 __copyright__ = 'Copyright 2019, Benjamin Paaßen'

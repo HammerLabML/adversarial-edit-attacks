@@ -22,8 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 import unittest
 import numpy as np
-import tree_edits
-import tree_utils
+import edist.tree_edits as tree_edits
+import edist.tree_utils as tree_utils
 import adversarial_edits
 
 __author__ = 'Benjamin Paaßen'

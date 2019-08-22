@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import multiprocessing as mp
 import numpy as np
-from tree_utils import check_tree_structure
+from edist.tree_utils import check_tree_structure
 from ptk.tree import Tree
 from ptk.tree import TreeNode
 import ptk.tree_kernels
