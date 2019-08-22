@@ -24,9 +24,8 @@ This is a Python 3 implementation of adversarial edit attacks on tree structured
 data, as presented in the paper
 
 * Paaßen, B. (2019). Adversarial Edit Attacks for Tree-structured Data.
-    Submitted to the ECML PKDD Joint International Workshop on
-    Advances in Interpretable Machine Learning and Artificial Intelligence &
-    Explainable Knowledge Discovery in Data Mining (AIMLAI-XKDD 2019)
+  Proceedings of the 20th International Conference on Intelligent Data
+  Engineering and Automated Learning (IDEAL 2019). accepted.
 
 The attacks presented here manipulate an input tree _x_ with tree edits until
 the predicted label of an attacked tree classifier _f_ changes, i.e. the
@@ -40,16 +39,6 @@ to reduce the distance to a reference tree which has the desired target label
 via backtracing ([Paaßen, 2018][1]).
 These methods are implemented in `adversarial_edits.construct_random_adversarial`
 and `adversarial_edits.construct_adversarial`, respectively.
-
-## Installation and setup
-
-To set up this package, you need to
-
-1. install all dependencies listed below (except for `ptk`, which is enclosed),
-2. run the command `python3 setup.py build_ext --inplace` to compile the cython
-    sources.
-
-Then, every function should run.
 
 ## Reproduce the results in the paper
 
@@ -72,8 +61,9 @@ matrix on the data for which adversarials should be constructed. This pairwise
 tree edit distance matrix can be computed via
 
 <pre>
-import multiprocess
-D = multiprocess.pairwise_distances_symmetric(X, X)
+import edist.multiprocess as mp
+import edist.ted as ted
+D = mp.pairwise_distances_symmetric(X, X, ted.standard_ted)
 </pre>
 
 ## Dependencies
@@ -81,19 +71,21 @@ D = multiprocess.pairwise_distances_symmetric(X, X)
 As dependencies, this package requires [numpy](http://www.numpy.org/) for
 general array handling, [scipy](https://scipy.org/) for eigenvalue decomposition
 and statistical tests, [sklearn](https://scikit-learn.org/stable/) for
-support vector machines, [pytorch](https://pytorch.org/) for recursive neural
-networks, [cython](https://cython.org/) for fast tree edit distance
-computations, and [ptk][2]
-for tree kernel computations. Note that the latter package is not available via
-pip and is written in Python2, such that we include an adapted Python3 version
-here in the subfolder `ptk`.
+support vector machines, [pytorch](https://pytorch.org/) for efficient gradients
+for recursive neural networks, [edist](https://gitlab.ub.uni-bielefeld.de/bpaassen/python-edit-distances)
+for fast tree edit distance computations and tree utility functions,
+and [ptk][2] for tree kernel computations. Note that the latter package is not
+available via pip and is written in Python2, such that we include an adapted
+Python3 version here in the subfolder `ptk`.
 
 ## License
 
-This documentation is licensed under the terms of the [creative commons attribution-shareAlike 4.0 international (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license. The code
-contained alongside this documentation is licensed under the
-[GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
-A copy of this license is contained in the `gpl-3.0.md` file alongside this README.
+This documentation is licensed under the terms of the
+[creative commons attribution-shareAlike 4.0 international (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+license. The code contained alongside this documentation is licensed under the
+[GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+license. A copy of this license is contained in the `LICENSE.md` file alongside
+this README.
 
 ## Contents
 
@@ -103,12 +95,12 @@ The detailed contents of this package are the following:
 * `adversarial_edits_test.py` : Provides test functions for `adversarial_edits.py`.
 * `cystic` : Contains the Cystic data set in JSON format.
 * `Cystic.ipynb` : Contains the Cystic experiment.
-* `gpl-3.0.md` : Contains the GPLv3 license.
 * `hyperopt.py` : Implements hyper parameter optimization for SVM and tree echo
     state networks.
 * `hyperopt_test.py` : Provides test functions for `hyperopt.py`.
 * `leukemia` : Contains the Leukemia data set in JSON format.
 * `Leukemia.ipynb` : Contains the Leukemia experiment.
+* `LICENSE.md` : Contains the GPLv3 license.
 * `minipalindrome` : Contains the MiniPalindrome data set in JSON format.
 * `MiniPalindrome.ipynb` : Contains the MiniPalindrome experiment.
 * `ptk` : Contains a python3 compatible version of Giovanni Da San Martino's
@@ -120,21 +112,11 @@ The detailed contents of this package are the following:
 * `recursive_net_test.py` : Provides test functions for `recursive_net.py`.
 * `results` : Contains experimental results.
 * `Resulty.ipynb` : Evaluates the experimental results.
-* `setup.py` : A helper script to compile the `ted.pyx` file using
-    [cython](https://cython.org/).
 * `sorting` : Contains the Sorting data set in JSON format.
 * `Sorting.ipynb` : Contains the Sorting experiment.
-* `ted.pyx` : Implements the tree edit distance and its backtracing following
-    [Paaßen (2018)][1].
-* `ted_test.py` : Provides test functions for `ted.pyx`.
-* `trace.py` : Contains utility classes for tree edit distance backtracing.
 * `tree_echo_state.py` : Implements Tree Echo State nwtorks
     ([Gallicchio & Micheli, 2013][4]).
 * `tree_echo_state_test.py` : Provides test functions for `tree_echo_state.py`.
-* `tree_edits.py` : Implements tree edits as described in the paper.
-* `tree_edits_test.py` : Provides test functions for `tree_edits.py`.
-* `tree_utils.py` : Provides utility functions for tree processing.
-* `tree_utils_test.py` : Provides test functions for `tree_utils.py`.
 
 ## Literature
 
